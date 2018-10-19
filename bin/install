@@ -108,7 +108,7 @@ get_java() {
 	echo "downloading: $url"
 
 	curl -fLC - \
-		--progress-bar --silent \
+		--progress-bar \
 		--retry 3 --retry-delay 3 \
 		-b oraclelicense=accept-securebackup-cookie \
 		-o $destdir/$variant $url

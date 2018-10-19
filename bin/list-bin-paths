@@ -1,1 +1,7 @@
-echo "Contents/Home/bin"
+case "$(uname -s)" in
+	Linux)
+		echo "bin"
+	Darwin)
+		echo "Contents/Home/bin"
+	*) ASDF_JAVA_ERROR="$(uname -s) is not supported" ;;
+esac
