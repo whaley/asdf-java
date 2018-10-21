@@ -1,3 +1,9 @@
 #!/usr/bin/env bash
 
-export JAVA_HOME=$ASDF_INSTALL_PATH
+case "$(uname -s)" in
+    Linux)
+        export JAVA_HOME=$ASDF_INSTALL_PATH"/bin" ;;
+    Darwin)
+        export JAVA_HOME=$ASDF_INSTALL_PATH"/Contents/Home/bin" ;;
+    *) ASDF_JAVA_ERROR="$(uname -s) is not supported" ;;
+esac
