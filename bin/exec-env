@@ -2,8 +2,9 @@
 
 case "$(uname -s)" in
     Linux)
-        export JAVA_HOME=$ASDF_INSTALL_PATH"/bin" ;;
+        export JAVA_HOME=$ASDF_INSTALL_PATH ;;
     Darwin)
-        export JAVA_HOME=$ASDF_INSTALL_PATH"/Contents/Home/bin" ;;
-    *) ASDF_JAVA_ERROR="$(uname -s) is not supported" ;;
+        export JAVA_HOME=$ASDF_INSTALL_PATH"/Contents/Home" ;;
+    *) 
+        export JAVA_HOME=$ASDF_INSTALL_PATH ;;
 esac
