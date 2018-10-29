@@ -4,7 +4,12 @@ case "$(uname -s)" in
 	Linux)
 		echo "bin" ;;
 	Darwin)
-		echo "Contents/Home/bin" ;;
+		if [ -d "Contents/Home/bin" ]; then
+			echo "Contents/Home/bin"
+		else
+			echo "bin"
+		fi
+		;;
 	*) 
 		echo "bin" ;;
 esac

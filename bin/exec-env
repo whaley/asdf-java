@@ -4,7 +4,12 @@ case "$(uname -s)" in
     Linux)
         export JAVA_HOME=$ASDF_INSTALL_PATH ;;
     Darwin)
-        export JAVA_HOME=$ASDF_INSTALL_PATH"/Contents/Home" ;;
+        if [ -d $ASDF_INSTALL_PATH"/Contents/Home" ]; then
+			export JAVA_HOME=$ASDF_INSTALL_PATH"/Contents/Home"
+		else
+			export JAVA_HOME=$ASDF_INSTALL_PATH
+		fi
+		;;
     *) 
         export JAVA_HOME=$ASDF_INSTALL_PATH ;;
 esac
